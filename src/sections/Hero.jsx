@@ -1,3 +1,8 @@
+import Button from "../Components/Button.jsx";
+import {arrowRight} from "../assets/icons/index.js";
+import {statistics} from "../constants/index.js";
+import {bigShoe1} from "../assets/images/index.js";
+
 const Hero = () => {
     return (
         <section
@@ -10,16 +15,38 @@ const Hero = () => {
             <div className='relative xl:w-2/5 flex flex-col
             justify-center items-start w-full max-xl:padding-x pt-28'>
 
-                <p>Our Summer Collection</p>
-                <h1>
-                    <span>The New Arrival</span>
+                <p className='font-montserrat text-xl text-coral-red'
+                >Our Summer Collection</p>
+                <h1 className='font-poppins text-8xl mt-10 max-sm:text-[72px] max-sm:leading-[82] font-bold'>
+                    <span className='xl:bg-white xl:whitespace-nowrap relative z-10 pr-10 '>The New Arrival</span>
                     <br/>
-                    <span>Nike</span>
-                    Shoes
+                    <span className='text-coral-red inline-block mt-3'>Nike</span> Shoes
                 </h1>
-                <p>Discover stylish Nike arrivals, quality
-                    comfort and innovation for your active life.</p>
+                <p className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm'
+                >
+                    Discover stylish Nike arrivals, quality comfort and innovation for your active life.
+                </p>
+                <Button label='Shop Now' iconURL={arrowRight}/>
 
+                <div className='flex justify-start items-start flex-wrap
+            w-full mt-20 gap-16'
+                >
+                    {statistics.map((stat) => (
+                        <div key={stat.label}>
+                            <p className='text-2xl font-poppins font-bold'>{stat.value}</p>
+                            <p className='font-poppins leading-7 text-slate-gray'>{stat.label}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="flex-1 flex justify-center items-center">
+                <img
+                    src={bigShoe1}
+                    alt="shoe collection"
+                    width={610} height={500}
+                    className="object-contain z-10 relative"
+                />
             </div>
         </section>
     )
