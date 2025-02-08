@@ -1,7 +1,8 @@
 import Button from "../Components/Button.jsx";
 import {arrowRight} from "../assets/icons/index.js";
-import {statistics} from "../constants/index.js";
+import {statistics, shoes} from "../constants/index.js";
 import {bigShoe1} from "../assets/images/index.js";
+import ShoeCard from "../Components/ShoeCard.jsx";
 
 const Hero = () => {
     return (
@@ -15,8 +16,7 @@ const Hero = () => {
             <div className='relative xl:w-2/5 flex flex-col
             justify-center items-start w-full max-xl:padding-x pt-28'>
 
-                <p className='font-montserrat text-xl text-coral-red'
-                >Our Summer Collection</p>
+                <p className='font-montserrat text-xl text-coral-red'>Our Summer Collection</p>
                 <h1 className='font-poppins text-8xl mt-10 max-sm:text-[72px] max-sm:leading-[82] font-bold'>
                     <span className='xl:bg-white xl:whitespace-nowrap relative z-10 pr-10 '>The New Arrival</span>
                     <br/>
@@ -40,13 +40,29 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="flex-1 flex justify-center items-center">
+            <div
+                className="flex-1 flex justify-center relative items-center
+                            xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
                 <img
                     src={bigShoe1}
                     alt="shoe collection"
                     width={610} height={500}
-                    className="object-contain z-10 relative"
+                    className="object-contain relative z-10 "
                 />
+
+                <div className="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
+                    {shoes.map((shoe) => (
+                        <div key={shoe}>
+                            <ShoeCard
+                                imgURL={shoe}
+                                changeBigShowImage=
+                                    {() => {
+                                    }}
+                                bigShowImage=""
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     )
