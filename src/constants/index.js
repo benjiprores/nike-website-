@@ -16,7 +16,7 @@ import {
 
 export const navLinks = [
     {href: "#home", label: "Home"},
-    {href: "#abo ut-us", label: "About Us"},
+    {href: "#about-us", label: "About Us"},
     {href: "#products", label: "Products"},
     {href: "#contact-us", label: "Contact Us"},
 ];
