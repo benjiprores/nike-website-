@@ -12,7 +12,7 @@ const Subscribe = () => {
                 <input
                     type="text"
                     placeholder="subscribe@nike.com"
-                    className="input"
+                    className="input font-montserrat"
                 />
                 <div className="flex max-sm:justify-end items-center max-sm:w-full">
                     <Button label="Sign Up" fullWidth/>
